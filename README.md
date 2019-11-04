@@ -1,6 +1,8 @@
-# vueblog
+# VueBlog
 
-> Vue blog
+This is a VueJS Blog Frontend, that utilizes Contentful for the blog post content. Feel free to use it as you wish, and simply update your Contentful API endpoint (it's read only in this anyhow).
+
+There should be a live version of this available at [https://www.shanehoban.com/vueblog](https://www.shanehoban.com/vueblog)
 
 ## Build Setup
 
