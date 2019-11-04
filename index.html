@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Shane's VueJS Blog</title>
+
+    <style>
+      body {
+        padding: 15px;
+      }
+
+      .loading-text {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div id="AppContent">
+        <nav class="content">
+          <router-link class="title is-3 has-text-primary" to="/">Shane's <i class="fab fa-vuejs"></i>ueJS Blog</router-link>
+        </nav>
+
+        <p>This blog's front end is built with VueJS, and the backend is using a headless CMS (<a href="https://www.contentful.com/" target="_blank">Contentful</a>). The content is composed via Contentful's web app and delivered to this custom VueJS app for viewing through Contentful's APIs. I've also built it using the <a href="https://bulma.io" target="_blank">Bulma CSS framework</a>, just for something different. <p></p>
+
+        <hr>
+
+        <div class="Loader">
+          <div class="level">
+            <div class="level-item">
+              <div class="has-text-centered">
+                <div class="loading-text has-text-weight-bold">Loading</div>
+                <div class="button is-primary is-loading">Loading</div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <router-view class="router-view"></router-view>
+
+        <hr>
+        <small class="has-text-grey">
+          <a href="https://www.shanehoban.com" target="_blank">www.shanehoban.com</a> | Shane Hoban &copy; 2019 | Built with VueJS <i class="fab fa-vuejs"></i>
+        </small>
+
+      </div>
+    </div>
+    <script src="dist/build.js"></script>
+  </body>
+</html>
