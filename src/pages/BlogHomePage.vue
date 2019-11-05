@@ -13,7 +13,6 @@
  
 <script>
   import axios from 'axios';
-  import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
   import BlogSnippet from '../components/BlogSnippet.vue'
   
   const contentfulAPI = 'https://cdn.contentful.com/spaces/rj5zfqr1cns8/environments/master/entries?access_token=kPclXKcbGUoYDBoyxIKMaOr-G6egYH5tnLGa5UX7kt8&content_type=blogPost';
@@ -34,7 +33,7 @@
       .then(response => {
         this.pageTitle = 'All Blog Posts <hr>'
         this.allPosts = response.data.items;
-        // console.log("Blog Data:", response.data.items);
+        // console.log("Blog Data:", response);
         
         document.querySelector('.Loader').style.display = 'none';
       })
@@ -44,7 +43,6 @@
  
 <style scoped>
   .blog-post {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
   }
-
 </style>

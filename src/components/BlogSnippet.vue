@@ -2,9 +2,16 @@
   <div class="content box">
     <router-link :to="{ path: '/post/'+ post.sys.id }"><h4 class="has-text-primary">{{post.fields.title}}</h4></router-link>
     
-    <p v-html="post.fields.content"></p>
+    <p class="post-snippet" v-html="postHTML"></p>
 
-    <PostMetadata :createdAt="post.sys.createdAt" :id="post.sys.id"></PostMetadata>
+    <router-link class="read-more-btn button is-primary" :to="{ path: '/post/'+ post.sys.id }">
+      <span>Read Full Post </span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-right"></i>
+      </span>
+    </router-link>
+
+    <PostMetadata :createdAt="post.sys.createdAt" :updatedAt="post.sys.updatedAt" :id="post.sys.id"></PostMetadata>
   </div>
 </template>
  
@@ -18,18 +25,42 @@
     },
     props: {
       post: {
-        type: Object
+        sys: Object,
+        fields: Object
       }
     },
     data: function() {
-      return {}
+      return {
+        postHTML: ''
+      }
     },
     mounted(){
-      this.post.fields.content = documentToHtmlString(this.post.fields.content)
+      this.postHTML = documentToHtmlString(this.post.fields.content)
     }
   }
 </script>
  
 <style scoped>
+  .post-snippet {
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+  }
 
+  .post-snippet:after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, white 30%, transparent);
+    z-index: 999;
+    display: block;
+  }
+
+  .read-more-btn {
+    margin-bottom: 10px;
+  }
 </style>
