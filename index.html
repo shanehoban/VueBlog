@@ -13,17 +13,34 @@
   <body>
     <div id="app" class="container">
       <div id="AppContent">
-        
-        <nav class="content">
-          <router-link v-if="blogHeading" class="title is-3 has-text-primary" to="/" v-html="blogHeading"></router-link>
-          <router-link v-else="blogHeading" class="title is-3 has-text-primary" to="/">VueBlog Home</router-link>
-        </nav>
 
-        <p class="content" v-if="blogInfo" v-html="blogInfo"></p>
+        <header class="columns is-vcentered">
+          <div v-if="authorImage" class="author-image column is-narrow">
+            <router-link v-if="blogHeading" class="title is-3 has-text-primary" to="/">
+              <figure class="image is-128x128">
+                <img :src="authorImage">
+              </figure>
+            </router-link>
+          </div>
 
-        <div class="content social-links" v-if="socialLinks">
-          <social-link v-for="(link, name) in socialLinks" :link="link" :name="name" :key="name"></social-link>
-        </div>
+          <div class="header-content column">
+            <a class="is-pulled-right button is-small is-primary is-inverted is-rounded" href="https://www.shanehoban.com/vueblog/#/post/683qaLiSk5tHDKKNeudzRf" target="_blank">Changelog</a>
+            <nav class="content">
+              <router-link v-if="blogHeading" class="title is-3 has-text-primary" to="/" v-html="blogHeading"></router-link>
+              <router-link v-else="blogHeading" class="title is-3 has-text-primary" to="/">VueBlog Home</router-link>
+            </nav>
+
+            <p class="content" v-if="blogInfo" v-html="blogInfo"></p>
+
+            <github-button v-if="enableGithubButton" href="https://github.com/shanehoban/vueblog" data-size="large" data-show-count="true" aria-label="Star shanehoban/vueblog on GitHub">Star</github-button>
+          </div>
+          <div class="is-clearfix"></div>
+        </header>
+          
+          <div class="content social-links" v-if="socialLinks">
+            <social-link v-for="(link, name) in socialLinks" :link="link" :name="name" :key="name"></social-link>
+          </div>
+
 
         <div class="Loader">
           <div class="level">

@@ -1,11 +1,13 @@
 module.exports = {
+  enableGithubButton: true,
+
   author: 'Shane Hoban',
-  authorImage: '',
+  authorImage: 'https://en.gravatar.com/userimage/40629877/c64f3ebcd68e83eb91aed23333bcb8b2.jpg?size=300',
   homepageURL: 'https://www.shanehoban.com',
   homepageURLText: 'www.shanehoban.com',
 
   blogHeading: 'Shane\'s VueBlog',
-  blogInfo: 'The blog is built with VueJS. The back end data is coming from a headless CMS (Contentful). This VueJS blog consumes the Contentful API to display the blog posts contained here.',
+  blogInfo: '<a href="https://github.com/shanehoban/VueBlog" target="_blank">VueBlog</a> is an open source front end app that can be used to build your blog with ease in VueJS. It utilizes a headless CMS (<a href="https://www.contentful.com/?ref=shanehoban.com/vueblog" target="_blank">Contentful</a>) for creating the content.',
 
   socialLinks: {
     website: 'https://www.shanehoban.com',
@@ -13,6 +15,7 @@ module.exports = {
     instagram: 'https://www.instagram.com/shanehoban',
     facebook: 'https://www.facebook.com/shanehoban',
     linkedin: 'https://www.linkedin.com/in/shanehoban/',
+    github: 'https://github.com/shanehoban/VueBlog',
   },
 
   // These should be your Contentful Access Token, space, environment, and entry type details (get these from Contentful app, whatever way you set them up)

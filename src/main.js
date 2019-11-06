@@ -4,6 +4,8 @@ import BlogHomePage from './pages/BlogHomePage.vue'
 import BlogPostPage from './pages/BlogPostPage.vue'
 import SocialLink from './components/SocialLink.vue'
 import BlogConfig from './blog.config';
+import GithubButton from 'vue-github-button'
+
 
 Vue.use(VueRouter)
 Vue.use(require('vue-moment'))
@@ -28,9 +30,13 @@ router.beforeEach((to, from, next) => {
 const app = new Vue({
   router,
   components: {
-    SocialLink
+    SocialLink,
+    GithubButton
   },
   data: {
+    enableGithubButton: BlogConfig.enableGithubButton,
+
+    authorImage: BlogConfig.authorImage,
     blogHeading: BlogConfig.blogHeading,
     blogInfo: BlogConfig.blogInfo,
     socialLinks: BlogConfig.socialLinks,

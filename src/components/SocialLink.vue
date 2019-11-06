@@ -32,4 +32,5 @@
   .SocialLink a[service="twitter"] { color: #1DA1F2; }
   .SocialLink a[service="instagram"] { color: purple; }
   .SocialLink a[service="facebook"] { color: #3b5998; }
+  .SocialLink a[service="github"] { color: #000; }
 </style>
