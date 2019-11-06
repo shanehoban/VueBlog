@@ -34,9 +34,10 @@ const app = new Vue({
     blogHeading: BlogConfig.blogHeading,
     blogInfo: BlogConfig.blogInfo,
     socialLinks: BlogConfig.socialLinks,
-    year: new Date().getFullYear(),
-    author: '',
-    homepageURL: '',
-    homepageURLText: ''
+
+    author: BlogConfig.author,
+    homepageURL: BlogConfig.homepageURL,
+    homepageURLText: BlogConfig.homepageURLText,
+    year: new Date().getFullYear()
   }
 }).$mount('#app')
