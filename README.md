@@ -1,6 +1,8 @@
 # VueBlog via Contentful
 
-This is a VueJS Blog Frontend, that utilizes Contentful for the blog post content. Feel free to use it as you wish, and simply update your Contentful API endpoint (it's read only in this anyhow).
+VueBlog is a blog powered by VueJS on the frontend.
+
+VueBlog utilizes Contentful for the blog post content. To use VueBlog, you will need to sign up for a Contentful account, which provides access to their API endpoint.
 
 ## Demo
 
@@ -16,7 +18,7 @@ Most if not all of the front end configuration settings you need to change have 
 
 ## Contentful Model Guide
 
-TODO: Create a guide for creating the Contentful models.
+TODO: Create a guide for creating the Contentful models required for VueBlog.
 
 ## Building This Project
 
@@ -30,5 +32,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
