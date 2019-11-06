@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 import BlogHomePage from './pages/BlogHomePage.vue'
 import BlogPostPage from './pages/BlogPostPage.vue'
+import SocialLink from './components/SocialLink.vue'
+import BlogConfig from './blog.config';
 
 Vue.use(VueRouter)
 Vue.use(require('vue-moment'))
@@ -25,5 +26,17 @@ router.beforeEach((to, from, next) => {
 })
 
 const app = new Vue({
-  router
+  router,
+  components: {
+    SocialLink
+  },
+  data: {
+    blogHeading: BlogConfig.blogHeading,
+    blogInfo: BlogConfig.blogInfo,
+    socialLinks: BlogConfig.socialLinks,
+    year: new Date().getFullYear(),
+    author: '',
+    homepageURL: '',
+    homepageURLText: ''
+  }
 }).$mount('#app')

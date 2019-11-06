@@ -1,0 +1,22 @@
+body {
+  padding: 15px;
+}
+.loading-text {
+  margin-bottom: 10px;
+}
+.content ul li ul {
+  margin-top: -15px;
+}
+.social-links {
+  margin: 15px 0;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+}
+.social-links .SocialLink a {
+  padding: 10px;
+  opacity: 0.9;
+  transition: opacity 0.25s;
+}
+.social-links .SocialLink a:hover {
+  opacity: 1;
+}

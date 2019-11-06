@@ -11,7 +11,7 @@
       </span>
     </router-link>
 
-    <PostMetadata :createdAt="post.sys.createdAt" :updatedAt="post.sys.updatedAt" :id="post.sys.id"></PostMetadata>
+    <PostMetadata :createdAt="post.sys.createdAt" :updatedAt="post.sys.updatedAt" :entryID="post.sys.id"></PostMetadata>
   </div>
 </template>
  

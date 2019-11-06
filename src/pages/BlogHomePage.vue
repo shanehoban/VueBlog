@@ -2,7 +2,6 @@
   <div class="content">
     <h3 v-html="pageTitle"></h3>
     
-
     <div class="all-posts">
       <div class="blog-post" v-for="post in allPosts" v-bind:key="post.sys.id">
         <BlogSnippet :post="post" :key="post.sys.id"></BlogSnippet>
@@ -14,12 +13,13 @@
 <script>
   import axios from 'axios';
   import BlogSnippet from '../components/BlogSnippet.vue'
-  
-  const contentfulAPI = 'https://cdn.contentful.com/spaces/rj5zfqr1cns8/environments/master/entries?access_token=kPclXKcbGUoYDBoyxIKMaOr-G6egYH5tnLGa5UX7kt8&content_type=blogPost';
+  import BlogConfig from '../blog.config';
 
+  this.blogInfo = BlogConfig.blogInfo;
+  
   export default {
     components: {
-      'BlogSnippet': BlogSnippet
+      BlogSnippet
     },
     data: function() {
       return {
@@ -29,7 +29,7 @@
     },
     mounted(){
       axios
-      .get(contentfulAPI)
+      .get(BlogConfig.getEntriesUrl())
       .then(response => {
         this.pageTitle = 'All Blog Posts <hr>'
         this.allPosts = response.data.items;

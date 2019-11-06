@@ -1,16 +1,25 @@
 <template>
-  <p class="is-size-7 has-text-grey">Posted on: {{ createdAt | moment("dddd, MMMM Do YYYY") }} | Last Updated: {{ updatedAt | moment("dddd, MMMM Do YYYY") }} | Post id: {{ id }}</p>
+  <p class="is-size-7 has-text-grey">
+    Posted on: {{ createdAt | moment("dddd, MMMM Do YYYY") }} 
+    
+    | Last Updated: {{ updatedAt | moment("dddd, MMMM Do YYYY") }} 
+    | Post id: <small><a :href="getEntryEditLink" target="_blank" title="Edit Entry">{{ entryID }}</a></small>
+  </p>
 </template>
  
 <script>
+  import BlogConfig from '../blog.config';
+
   export default {
     props: {
-        createdAt: this.createdAt,
-        updatedAt: this.updatedAt,
-        id: this.id
+        createdAt: String,
+        updatedAt: String,
+        entryID: String
     },
     data: function() {
-      return {}
+      return {
+        getEntryEditLink: BlogConfig.getEntryEditLink(this.entryID)
+      }
     }
   }
 </script>
