@@ -14,8 +14,6 @@
   import axios from 'axios';
   import BlogSnippet from '../components/BlogSnippet.vue'
   import BlogConfig from '../blog.config';
-
-  this.blogInfo = BlogConfig.blogInfo;
   
   export default {
     components: {
@@ -25,6 +23,7 @@
       return {
         allPosts: [],
         pageTitle: '',
+        blogInfo: BlogConfig.blogInfo
       }
     },
     mounted(){
