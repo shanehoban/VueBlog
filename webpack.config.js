@@ -1,6 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
+
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -73,5 +75,14 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
-  ])
+  ]);
+
+  module.exports.optimization = {
+    minimizer: [new UglifyJsPlugin({
+      uglifyOptions: {
+        sourceMap: true,
+        warnings: false,
+      },
+    })],
+  }
 }
